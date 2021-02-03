@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>URL NLP CHECKER</title>
+</head>
+
+<body>
+
+<header>
+    Please enter URL to check below
+</header>
+
+<main>
+    <section>
+        <form class="" onsubmit="return Client.handleSubmit(event)">
+            <input id="url" name="input" placeholder="URL to check..." type="text" value="">
+            <input name="" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)"
+                   type="submit"
+                   value="submit">
+        </form>
+    </section>
+
+    <section class="results">
+        <strong>Results:</strong>
+        <div id="results"></div>
+    </section>
+</main>
+
+<footer>
+
+</footer>
+<script>
+    // Check that service workers are supported
+    if ('serviceWorker' in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js');
+        });
+    }
+</script>
+</body>
+</html>
